@@ -1,0 +1,16 @@
+<form>
+  <textarea></textarea>
+  <button type="submit">Pretty</button>
+</form>
+<pre></pre>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      var jsonString = $('textarea').val();
+      $('pre').text(JSON.stringify(JSON.parse(jsonString), null, 2));
+    });
+  });
+</script>
