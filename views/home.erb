@@ -1,16 +1,20 @@
-<form>
-  <textarea></textarea>
-  <button type="submit">Pretty</button>
-</form>
-<pre></pre>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script>
-  $(function() {
-    $('form').submit(function(e) {
-      e.preventDefault();
-      var jsonString = $('textarea').val();
-      $('pre').text(JSON.stringify(JSON.parse(jsonString), null, 2));
-    });
-  });
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pretty JSON</title>
+  <link href="/assets/pretty.css" rel="stylesheet">
+</head>
+<body>
+  <form action="javascript:pretty()">
+    <textarea placeholder='{"your":"json","goes":"here"}'></textarea>
+    <button type="submit">Pretty</button>
+  </form>
+  <pre></pre>
+  <footer>
+    &copy; 2013 <a href="http://soff.es" rel="external nofollow">Sam Soffes</a> &mdash;
+    <a href="https://github.com/soffes/prettyjson.com" rel="external nofollow">Source on GitHub</a>
+  </footer>
+  <script src="/assets/pretty.js"></script>
+</body>
+</html>
