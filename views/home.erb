@@ -5,7 +5,7 @@
   <title>Pretty JSON</title>
   <link href="/assets/pretty.css" rel="stylesheet">
 </head>
-<body>
+<body onload="document.getElementsByTagName('textarea')[0].focus()">
   <form action="javascript:pretty()">
     <textarea placeholder='{"your":"json","goes":"here"}'></textarea>
     <button type="submit">Pretty</button>
