@@ -6,11 +6,11 @@ body {
 }
 
 textarea, pre, code {
-  font: 13px Menlo, Monaco, monospace;
+  font: 14px Menlo, Monaco, monospace;
 }
 
 textarea {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   display: block;
   border: 0;
   outline: 0;
