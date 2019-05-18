@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pretty JSON</title>
+  <style>body{font-family:sans-serif;padding:0}textarea{font:14px Menlo,Monaco,monospace;box-sizing:border-box;display:block;border:0;outline:0;padding:10px;position:fixed;top:0;left:0;right:0;bottom:0}button{position:fixed;right:10px;bottom:10px}footer{color:#999;text-align:center;font-size:.9em}footer a{color:#999;text-decoration:none;border-bottom:1px solid transparent}footer a:hover{border-bottom:1px solid}</style>
+</head>
+<body onload="document.getElementsByTagName('textarea')[0].focus()">
+  <form action="javascript:pretty()">
+    <textarea placeholder='{"your":"json","goes":"here"}'></textarea>
+    <button type="submit">Pretty</button>
+  </form>
+  <pre></pre>
+  <footer>
+    &copy; 2013–2019 <a href="http://soff.es" rel="external nofollow">Sam Soffes</a> &mdash;
+    <a href="https://github.com/soffes/prettyjson.com" rel="external nofollow">Source on GitHub</a>
+  </footer>
+  <script>
+    (function() {
+      window.pretty = function() {
+        var jsonString, textArea;
+        textArea = document.getElementsByTagName('textarea')[0];
+        jsonString = textArea.value;
+        return textArea.value = JSON.stringify(JSON.parse(jsonString), null, 2);
+      };
+    }).call(this);
+  </script>
+</body>
+</html>
+
